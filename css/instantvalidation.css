@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* www.dinnermint.org/css/creating-triangles-in-css/ */
+.error-message {
+  background-color:#fefde2;
+  border:1px solid #e8e355;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #953427;
+  font-size:13px;
+  padding:10px;
+  position:absolute;
+  z-index: 1000;
+  text-align:left;
+  width:255px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius: 4px;
+  -moz-box-shadow:0 0 5px #cccccc;
+  -webkit-box-shadow:0 0 5px #cccccc;
+  box-shadow: 5px;
+  visibility: hidden;
+}
+
+.error-message-arrow-border {
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+}
+
+.error-message-arrow {
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+}
+
+.error-message-arrow-border-top{bottom:-21px; left:30px;  border-color: #e8e355 transparent transparent transparent;}
+.error-message-arrow-top{bottom:-19px; left:30px; border-color: #fefde2 transparent transparent transparent;}
+
+.error-message-arrow-border-bottom{top:-21px; left:30px; border-color: transparent transparent #e8e355 transparent;}
+.error-message-arrow-bottom{top:-19px; left:30px; border-color: transparent transparent #fefde2 transparent;}
+
+.error-message-arrow-border-left{top:2px; left:277px; border-color: transparent transparent transparent #e8e355;}
+.error-message-arrow-left{top:2px; left:275px; border-color: transparent transparent transparent #fefde2;}
+
+.error-message-arrow-border-right{top:2px; left:-22px; border-color: transparent #e8e355 transparent transparent;}
+.error-message-arrow-right{top:2px; left:-20px; border-color: transparent #fefde2 transparent transparent;}
+
+ /* IE6 */
+.error-message-arrow {_border-left-color: pink;_border-bottom-color: pink;_border-right-color: pink;_filter: chroma(color=pink);}
+.error-message-arrow {_border-left-color: pink;_border-bottom-color: pink;_border-right-color: pink;_filter: chroma(color=pink);}
+.error-message-arrow {_border-left-color: pink;_border-bottom-color: pink;_border-right-color: pink;_filter: chroma(color=pink);}
+.error-message-arrow {_border-left-color: pink;_border-bottom-color: pink;_border-right-color: pink;_filter: chroma(color=pink);}
+
