@@ -104,6 +104,7 @@
 				$(obj).removeClass("instantValidationInValid");
 			} else {
 				obj.next(".error-message").fadeIn(options.fadeSpeed);
+				$(obj).addClass("instantValidationInValid");
 			}
 		}	
 		
