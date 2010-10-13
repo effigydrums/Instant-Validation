@@ -1,5 +1,5 @@
 /*
- * 	InstandValidation 1.1 - jQuery plugin
+ * 	InstandValidation 2.0 - jQuery plugin
  *	written by Kent Heberling, http://www.khwebdesign.net	
  *	http://khwebdesign.net/blog/instant-validation-jquery-plugin/
  *
@@ -31,10 +31,9 @@
 		var collection = ".requiredText,.emailAddress,.int,.phone,.zip";
 
 		return this.each(function() {  
-			$(this).children(collection).each(function(){				   
+			$(this).find(collection).each(function(){				   
 				// Initializing Code
 				$(this).after("<div class=\"error-message\">" + $(this).attr("title") + "<div class=\"error-message-arrow-border\"></div><div class=\"error-message-arrow\"></div></div>"); // create pop up validation message
-				$(this).addClass("instantValidationInValid"); // initialize to invalid to prevent form submission
 				errorMessage = $(this).next();
 				arrowHeight = $(errorMessage).children(".error-message-arrow-border").outerHeight()/2;
 				arrowWidth = $(errorMessage).children(".error-message-arrow-border").outerWidth()/2; 
@@ -69,8 +68,10 @@
 			
 			// Prevent form submission if invalid inputs exist
 			$(this).submit(function(event){
-				$(this).children().each(function(){
-					if ($(this).hasClass("instantValidationInValid")){ event.preventDefault(); }
+				$(this).find(collection).each(function(){
+					if (handlePopUp(validateInput($(this)),$(this))){
+						event.preventDefault();				 
+					}
 				});
 			});
 		});
@@ -101,10 +102,10 @@
 		function handlePopUp(isValid,obj) {		
 			if (isValid){
 				obj.next(".error-message").fadeOut(options.fadeSpeed);
-				$(obj).removeClass("instantValidationInValid");
+				return false;
 			} else {
 				obj.next(".error-message").fadeIn(options.fadeSpeed);
-				$(obj).addClass("instantValidationInValid");
+				return true;
 			}
 		}	
 		
